@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作品集内容编辑器</title>
+    <meta name="description" content="用于编辑广告作品集网站内容和素材的本地工具。" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="editor.css" />
+  </head>
+  <body>
+    <header class="editor-header">
+      <div>
+        <p>Portfolio Editor</p>
+        <h1>作品集内容编辑器</h1>
+      </div>
+      <div class="header-actions">
+        <a class="ghost-button" href="index.html" target="_blank" rel="noreferrer">预览网站</a>
+        <button class="ghost-button" id="selectFolderButton" type="button">选择网站文件夹</button>
+        <button class="primary-button" id="saveButton" type="button">保存到网站</button>
+      </div>
+    </header>
+
+    <main class="editor-main">
+      <aside class="editor-side" aria-label="编辑状态">
+        <div class="status-block">
+          <span>当前文件夹</span>
+          <strong id="folderName">未选择</strong>
+        </div>
+        <div class="status-block">
+          <span>保存状态</span>
+          <strong id="saveStatus">等待编辑</strong>
+        </div>
+        <nav class="side-nav" aria-label="编辑导航">
+          <a href="#profile">个人信息</a>
+          <a href="#sections">页面文案</a>
+          <a href="#projects">作品项目</a>
+          <a href="#process">方法模块</a>
+        </nav>
+        <button class="text-link" id="downloadContentButton" type="button">下载 content.js 备份</button>
+      </aside>
+
+      <form class="editor-form" id="editorForm">
+        <section class="editor-section" id="profile" aria-labelledby="profileTitle">
+          <div class="section-heading">
+            <p>Profile</p>
+            <h2 id="profileTitle">个人信息</h2>
+          </div>
+          <div id="profileFields"></div>
+        </section>
+
+        <section class="editor-section" id="sections" aria-labelledby="sectionsTitle">
+          <div class="section-heading">
+            <p>Copy</p>
+            <h2 id="sectionsTitle">页面文案</h2>
+          </div>
+          <div id="sectionFields"></div>
+          <div class="sub-section">
+            <div class="sub-heading">
+              <h3>数字概览</h3>
+              <button class="ghost-button small" id="addMetricButton" type="button">新增数字</button>
+            </div>
+            <div class="stack-list" id="metricsList"></div>
+          </div>
+        </section>
+
+        <section class="editor-section" id="projects" aria-labelledby="projectsTitle">
+          <div class="section-heading row-heading">
+            <div>
+              <p>Work</p>
+              <h2 id="projectsTitle">作品项目</h2>
+            </div>
+            <button class="primary-button" id="addProjectButton" type="button">新增作品</button>
+          </div>
+          <div class="projects-list" id="projectsList"></div>
+        </section>
+
+        <section class="editor-section" id="process" aria-labelledby="processTitle">
+          <div class="section-heading row-heading">
+            <div>
+              <p>Method</p>
+              <h2 id="processTitle">方法模块</h2>
+            </div>
+            <button class="ghost-button" id="addProcessButton" type="button">新增模块</button>
+          </div>
+          <div class="stack-list" id="processList"></div>
+        </section>
+      </form>
+    </main>
+
+    <script src="content.js"></script>
+    <script src="editor.js"></script>
+  </body>
+</html>
