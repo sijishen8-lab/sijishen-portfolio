@@ -1,149 +1,363 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>广告作品集 | 你的名字</title>
-    <meta
-      name="description"
-      content="广告学应届生作品集，展示品牌策略、视觉传播、文档、图片与视频项目。"
-    />
-    <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#work">跳到作品</a>
 
-    <header class="site-header" aria-label="主导航">
-      <a class="brand" href="#top" id="brandName">你的名字</a>
-      <nav class="nav-links" aria-label="页面导航">
-        <a href="#work">作品</a>
-        <a href="#process">方法</a>
-        <a href="#about">关于</a>
-        <a href="#contact">联系</a>
-      </nav>
-      <button class="text-button" id="editModeToggle" type="button" aria-pressed="false">
-        换图模式
-      </button>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <main id="top">
-      <section class="hero" aria-labelledby="heroTitle">
-        <img class="hero-image" id="heroImage" src="" alt="" />
-        <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow" id="heroEyebrow">Advertising Portfolio · 2026</p>
-          <h1 id="heroTitle">把策略、画面与媒介节奏放到同一张桌面上。</h1>
-          <p class="hero-copy" id="heroIntro"></p>
-          <div class="hero-actions">
-            <a class="primary-link" href="#work">查看作品</a>
-            <a class="secondary-link" href="#contact">联系我</a>
-          </div>
-          <div class="hero-work-rail" id="heroWorkRail" aria-label="快速打开作品"></div>
-          <div class="hero-image-tools image-tools" data-image-tools>
-            <label class="file-button">
-              替换首图
-              <input class="image-picker" type="file" accept="image/*" data-slot="hero" />
-            </label>
-            <button class="text-button light" type="button" data-reset-image="hero">恢复默认</button>
-          </div>
-        </div>
-        <div class="hero-meta" aria-label="个人信息">
-          <span id="profileRole">广告学应届生</span>
-          <span id="profileLocation">Shanghai</span>
-          <span id="profileAvailability">2026 应届 · 可入职</span>
-        </div>
-      </section>
+    <title>LaoZhi | Creative Portfolio</title>
 
-      <section class="overview" aria-label="作品集概览">
-        <div class="overview-inner">
-          <div>
-            <p class="section-kicker">Portfolio System</p>
-            <h2 id="overviewTitle">文档、图片、视频，都放进同一套清晰的叙事里。</h2>
-          </div>
-          <div class="metric-row" id="metricRow"></div>
-        </div>
-      </section>
+    <meta name="description"
+        content="LaoZhi Creative Portfolio，品牌策划、视觉设计、AI影像创作作品集。">
 
-      <section class="work-section" id="work" aria-labelledby="workTitle">
-        <div class="section-heading">
-          <p class="section-kicker">Selected Work</p>
-          <h2 id="workTitle">作品</h2>
-          <p id="workIntro">
-            每个项目都保留封面、媒介类型、职责、过程文件和预览入口，适合面试前快速展示重点。
-          </p>
-        </div>
-        <div class="filter-bar" id="filterBar" role="tablist" aria-label="作品筛选"></div>
-        <div class="portfolio-grid" id="portfolioGrid"></div>
-      </section>
+    <link rel="stylesheet" href="css/style.css">
 
-      <section class="process-band" id="process" aria-labelledby="processTitle">
-        <div class="section-heading narrow">
-          <p class="section-kicker">Working Method</p>
-          <h2 id="processTitle">从问题到表达</h2>
-        </div>
-        <div class="process-grid" id="processGrid"></div>
-      </section>
+</head>
 
-      <section class="about-section" id="about" aria-labelledby="aboutTitle">
-        <div class="about-copy">
-          <p class="section-kicker">About</p>
-          <h2 id="aboutTitle">我适合需要“想清楚，也做出来”的团队。</h2>
-          <p id="aboutText">
-            我习惯把策略文档、视觉稿、视频脚本和复盘材料放在同一条逻辑线上看：先理解人，再找到表达，
-            最后让内容在合适的媒介里形成连续记忆。
-          </p>
-        </div>
-        <div class="focus-list" id="focusList" aria-label="能力方向"></div>
-      </section>
 
-      <section class="contact-section" id="contact" aria-labelledby="contactTitle">
-        <div>
-          <p class="section-kicker">Contact</p>
-          <h2 id="contactTitle">期待把下一个传播问题讲清楚。</h2>
-        </div>
-        <div class="contact-actions">
-          <a class="primary-link dark" id="emailLink" href="mailto:yourname@email.com">发邮件</a>
-          <a class="secondary-link dark" href="#work">再看一遍作品</a>
-        </div>
-      </section>
-    </main>
+<body>
 
-    <div class="modal" id="projectModal" hidden>
-      <div class="modal-backdrop" data-close-modal></div>
-      <article
-        class="modal-panel"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modalTitle"
-        tabindex="-1"
-      >
-        <button class="modal-close" type="button" data-close-modal aria-label="关闭项目详情">
-          关闭
-        </button>
-        <div class="modal-media" id="modalMedia"></div>
-        <div class="modal-body">
-          <p class="project-type" id="modalType"></p>
-          <h2 id="modalTitle"></h2>
-          <p id="modalSummary"></p>
-          <dl class="project-details">
-            <div>
-              <dt>职责</dt>
-              <dd id="modalRole"></dd>
-            </div>
-            <div>
-              <dt>年份</dt>
-              <dd id="modalYear"></dd>
-            </div>
-          </dl>
-          <div class="tag-row" id="modalTags"></div>
-          <div class="modal-actions" id="modalActions"></div>
-          <div class="gallery-strip" id="modalGallery"></div>
-        </div>
-      </article>
+
+<!-- 导航 -->
+
+<header class="header">
+
+    <div class="logo">
+        LAOZHI
     </div>
 
-    <script src="content.js"></script>
-    <script src="script.js"></script>
-  </body>
+
+    <nav>
+
+        <a href="#works">
+            作品
+        </a>
+
+        <a href="#about">
+            方法
+        </a>
+
+        <a href="#contact">
+            联系
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- 首页首屏 -->
+
+<section class="hero">
+
+
+    <div class="hero-text">
+
+
+        <p class="year">
+            CREATIVE PORTFOLIO / 2026
+        </p>
+
+
+        <h1>
+
+            LAOZHI
+
+        </h1>
+
+
+        <h2>
+
+            Brand × Visual × AI
+
+        </h2>
+
+
+        <p class="intro">
+
+            用创意连接品牌与用户。
+            <br>
+            专注品牌策划、视觉设计与AI影像创作。
+
+        </p>
+
+
+
+        <a class="button"
+           href="#works">
+
+            查看作品
+
+        </a>
+
+
+    </div>
+
+
+
+    <div class="hero-image">
+
+
+        <img src="assets/cover/hero.jpg"
+             alt="LaoZhi Creative Visual">
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!-- 精选作品 -->
+
+<section id="works"
+         class="works">
+
+
+<div class="section-title">
+
+<p>
+SELECTED WORKS
+</p>
+
+<h2>
+精选项目
+</h2>
+
+</div>
+
+
+
+
+<div class="work-grid">
+
+
+
+<!-- 项目1 -->
+
+
+<article class="card">
+
+
+<p>
+01 / BRAND FILM
+</p>
+
+
+<h3>
+熙禾智能
+</h3>
+
+
+<span>
+企业品牌宣传片策划
+</span>
+
+
+<a href="works/xihe.html">
+VIEW PROJECT →
+</a>
+
+
+</article>
+
+
+
+
+
+<!-- 项目2 -->
+
+
+<article class="card">
+
+
+<p>
+02 / BRAND STRATEGY
+</p>
+
+
+<h3>
+馍馍来福
+</h3>
+
+
+<span>
+非遗品牌年轻化策划
+</span>
+
+
+<a href="works/momo.html">
+VIEW PROJECT →
+</a>
+
+
+</article>
+
+
+
+
+
+
+<!-- 项目3 -->
+
+
+<article class="card">
+
+
+<p>
+03 / AI VISUAL
+</p>
+
+
+<h3>
+AI Visual Lab
+</h3>
+
+
+<span>
+生成式视觉探索
+</span>
+
+
+<a href="works/ai-video.html">
+VIEW PROJECT →
+</a>
+
+
+</article>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- 方法 -->
+
+<section id="about"
+         class="about">
+
+
+<div>
+
+
+<p>
+ABOUT
+</p>
+
+
+<h2>
+老智是谁？
+</h2>
+
+
+<p>
+
+广告学专业学生，
+关注品牌传播、视觉设计与AI创意。
+
+<br><br>
+
+从策略分析到视觉呈现，
+探索新时代内容创作方式。
+
+</p>
+
+
+</div>
+
+
+
+<div class="skills">
+
+
+<span>
+Brand Strategy
+</span>
+
+<span>
+Visual Design
+</span>
+
+<span>
+AI Image
+</span>
+
+<span>
+Video Creation
+</span>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- 联系 -->
+
+<section id="contact"
+         class="contact">
+
+
+<p>
+CONTACT
+</p>
+
+
+<h2>
+Let's create something meaningful.
+</h2>
+
+
+<p>
+Email：
+your@email.com
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+
+© 2026 LAOZHI PORTFOLIO
+
+</p>
+
+
+</footer>
+
+
+
+<script src="js/main.js"></script>
+
+
+</body>
+
+
 </html>
